@@ -1,0 +1,633 @@
+﻿<?xml version="1.0"?>
+
+<!--
+    This schema is intended for Renal Units to submit data to and via the UKRDC
+    Non-renal specialities should e-mail nbn-tr.patientview@nhs.net to discuss
+    how to send data to PatientView
+-->
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="patientview">
+        <xs:annotation>
+            <xs:documentation>UKRDC-PatientView XML Schema</xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element maxOccurs="1" minOccurs="1" name="sequence">
+                    <xs:annotation>
+                        <xs:documentation>This should be incremented each time the exporter is run (per batch, not per patient)</xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:integer">
+                            <xs:minInclusive value="000000"/>
+                            <xs:maxInclusive value="999999"/>
+                            <xs:totalDigits value="6"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element maxOccurs="1" minOccurs="1" name="dateofreport" type="xs:dateTime">
+                    <xs:annotation>
+                        <xs:documentation>The datetime that the exporter was run</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element maxOccurs="1" minOccurs="0" name="flag" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>The flag field is not used in PV2. Please manage accounts via the website.</xs:documentation>
+                    </xs:annotation>
+                </xs:element>
+                <xs:element maxOccurs="1" minOccurs="1" name="centredetails">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="1" name="centrecode" type="xs:string">
+                                <xs:annotation>
+                                    <xs:documentation>UKRR issued Unit identifier. If unsure please e-mail nbn-tr.patientview@nhs.net to discuss.</xs:documentation>
+                                </xs:annotation>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="centrename">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="centreaddress1">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="centreaddress2">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="centreaddress3">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="centreaddress4">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="centrepostcode">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="centretelephone">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="centreemail">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="1" minOccurs="0" name="gpdetails">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gpname">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gpaddress1">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gpaddress2">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gpaddress3">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gpaddress4">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gppostcode">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="20"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gptelephone">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gpemail">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gpcode">
+                                <xs:annotation>
+                                    <xs:documentation>GP Practitioner Code</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="gppracticecode">
+                                <xs:annotation>
+                                    <xs:documentation>GP Practice Code</xs:documentation>
+                                </xs:annotation>
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element maxOccurs="1" minOccurs="1" name="patient">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element maxOccurs="1" minOccurs="0" name="programmemberships">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="programmembership">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="programmembership_code" maxOccurs="1" minOccurs="1"/>
+                                                    <xs:element name="programmembership_status" maxOccurs="1" minOccurs="1" type="xs:boolean"/>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>    
+
+                            </xs:element>
+
+                            <xs:element maxOccurs="1" minOccurs="1" name="personaldetails">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="surname">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for Anonymous Data</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="30"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="forename">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for Anonymous Data</xs:documentation>
+                                            </xs:annotation>                                        
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="30"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="1" name="dateofbirth" type="xs:date">
+                                            <xs:annotation>
+                                                <xs:documentation>If sending anonymous data please set to 02/07/YYYY where YYYY is their real year of birth</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>                                        
+                                        <xs:element maxOccurs="1" minOccurs="0" name="sex" type="sex"/>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="nhsno">
+                                            <xs:annotation>
+                                                <xs:documentation>NHS/CHI/HandSC Identifier. Do not supply for anonymous patients.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:whiteSpace value="collapse"/>
+                                                    <xs:length value="10"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="uid">
+                                            <xs:annotation>
+                                                <xs:documentation>UID - Anonymous Identifier (such as Database ID). Please supply for all patients.</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:whiteSpace value="collapse"/>
+                                                    <xs:length value="10"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>                                        
+                                        <xs:element maxOccurs="1" minOccurs="0" name="ethnicorigin" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>Ethnic Origin - Coded as per UKRR (v3 or v4 code sets)</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="hospitalnumber">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
+                                            </xs:annotation>                                        
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="30"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="address1">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="60"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="address2">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="60"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="address3">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="60"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="address4">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="60"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="postcode">
+                                            <xs:annotation>
+                                                <xs:documentation>For anonymous patients please only supply the first part of the post code</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="10"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="telephone1">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="100"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="telephone2">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="100"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="mobile">
+                                            <xs:annotation>
+                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="100"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="clinicaldetails">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="rrtstatus" type="xs:string">
+                                            <xs:annotation>
+                                                <xs:documentation>Latest RRT Modality</xs:documentation>
+                                            </xs:annotation>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="tpstatus">
+                                            <xs:annotation>
+                                                <xs:documentation>Current Transplant Status</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="70"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="1" minOccurs="0" name="diagnosisedta">
+                                            <xs:annotation>
+                                                <xs:documentation>EDTA/EDTA2 Code - NOT TEXT</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="5"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <xs:element maxOccurs="unbounded" minOccurs="0" name="diagnosis" type="pv_diagnosis"/>
+                                        <xs:element minOccurs="0" name="bloodgroup">
+                                            <xs:annotation>
+                                                <xs:documentation>Blood Group - Coded as per UKRR</xs:documentation>
+                                            </xs:annotation>
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="30"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="testdetails">
+                                <!--    NOTE: Each testcode should only appear once. If you have two tests which map to the same
+                                        PV code such as Jaffe & Enzymatic creatinine they need to be consolidated.
+                                -->
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" minOccurs="1" name="test">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element maxOccurs="1" minOccurs="1" name="testname">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="40"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="1" minOccurs="1" name="testcode" type="testcode"/>
+                                                    <xs:element maxOccurs="1" minOccurs="0" name="units">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="20"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="1" minOccurs="1" name="daterange">
+                                                        <xs:annotation>
+                                                            <xs:documentation>Date Range in which tests of this type have been extracted. The dates should be a fixed period of time and not the earliest/latest dates found.</xs:documentation>
+                                                        </xs:annotation>
+                                                        <xs:complexType>
+                                                            <xs:attribute name="start" type="xs:date" use="required"/>
+                                                            <xs:attribute name="stop" type="xs:date" use="required"/>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="unbounded" minOccurs="1" name="result">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element maxOccurs="1" minOccurs="1" name="datestamp" type="xs:dateTime"/>
+                                                                <xs:element maxOccurs="1" minOccurs="0" name="prepost" type="prepost"/>
+                                                                <xs:element maxOccurs="1" minOccurs="1" name="value">
+                                                                    <xs:simpleType>
+                                                                        <xs:restriction base="xs:string">
+                                                                            <xs:maxLength value="20"/>
+                                                                        </xs:restriction>
+                                                                    </xs:simpleType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="drugdetails">
+                                <!-- This should contain all prescriptions on the system and not just the current ones -->
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" minOccurs="1" name="drug">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element maxOccurs="1" minOccurs="1" name="drugstartdate" type="xs:date"/>
+                                                    <xs:element maxOccurs="1" minOccurs="0" name="drugenddate" type="xs:date"/>
+                                                    <xs:element maxOccurs="1" minOccurs="1" name="drugname">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="110"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="1" minOccurs="1" name="drugdose" type="xs:string"/>
+                                                    <xs:element maxOccurs="1" minOccurs="0" name="code">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element maxOccurs="1" minOccurs="0" name="codetype" type="xs:string"/>
+                                                                <xs:element maxOccurs="1" minOccurs="0" name="codevalue" type="xs:string"/>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element maxOccurs="1" minOccurs="0" name="letterdetails">
+                                <xs:annotation>
+                                    <xs:documentation>Do not supply for anonymous patients</xs:documentation>
+                                </xs:annotation>
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element maxOccurs="unbounded" minOccurs="1" name="letter">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element maxOccurs="1" minOccurs="1" name="letterdate" type="xs:dateTime"/>
+                                                    <xs:element maxOccurs="1" minOccurs="1" name="lettertype">
+                                                        <xs:simpleType>
+                                                            <xs:restriction base="xs:string">
+                                                                <xs:maxLength value="50"/>
+                                                            </xs:restriction>
+                                                        </xs:simpleType>
+                                                    </xs:element>
+                                                    <xs:element maxOccurs="1" minOccurs="1" name="lettercontent" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                            Letter content should be sent as a CDATA section to avoid parsing errors. E.g.<![CDATA[ and end with the string ]]>
+                                                            Please make sure that the encoding of the Letter section matches the header of the XML file.
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+
+    <xs:complexType name="pv_diagnosis">
+        <xs:simpleContent>
+            <xs:extension base="pv_diagnosis_name">
+                <xs:attribute default="false" name="primary" type="xs:boolean" use="optional"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="pv_diagnosis_name">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="150"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="sex">
+        <xs:annotation>
+            <xs:documentation>Sex</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="M"/>
+            <xs:enumeration value="F"/>
+            <xs:enumeration value="U"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="testcode">
+        <xs:annotation>
+            <xs:documentation>Test codes. Ciclosporin, tacrolimus and sirolimus are drug levels. PCR is protein-creatinine ratio. ACR is albumin creatinine ratio.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="hb"/>
+            <xs:enumeration value="wbc"/>
+            <xs:enumeration value="platelets"/>
+            <xs:enumeration value="urea"/>
+            <xs:enumeration value="creatinine"/>
+            <xs:enumeration value="potassium"/>
+            <xs:enumeration value="calcium"/>
+            <xs:enumeration value="adjustedcalcium"/>
+            <xs:enumeration value="phosphate"/>
+            <xs:enumeration value="albumin"/>
+            <xs:enumeration value="crp"/>
+            <xs:enumeration value="pth"/>
+            <xs:enumeration value="cholesterol"/>
+            <xs:enumeration value="tg"/>
+            <xs:enumeration value="glucose"/>
+            <xs:enumeration value="hba1c"/>
+            <xs:enumeration value="egfr"/>
+            <xs:enumeration value="hco3"/>
+            <xs:enumeration value="inr"/>
+            <xs:enumeration value="sodium"/>
+            <xs:enumeration value="pcr"/>
+            <xs:enumeration value="acr"/>
+            <xs:enumeration value="urr"/>
+            <xs:enumeration value="ktv"/>
+            <xs:enumeration value="ciclosporin"/>
+            <xs:enumeration value="tacrolimus"/>
+            <xs:enumeration value="sirolimus"/>
+            <xs:enumeration value="bpsys"/>
+            <xs:enumeration value="bpdia"/>
+            <xs:enumeration value="height"/>
+            <xs:enumeration value="weight"/>
+            <xs:enumeration value="bili"/>
+            <xs:enumeration value="ast"/>
+            <xs:enumeration value="alt"/>
+            <xs:enumeration value="alp"/>
+            <xs:enumeration value="ggt"/>
+            <xs:enumeration value="ferritin"/>
+            <xs:enumeration value="iron"/>
+            <xs:enumeration value="transferrin"/>
+            <xs:enumeration value="ironsat"/>
+            <xs:enumeration value="urate"/>
+
+            <xs:enumeration value="ldl"/>
+            <xs:enumeration value="hdl"/>
+            <xs:enumeration value="magnesium"/>
+            <xs:enumeration value="vitd"/>
+            <xs:enumeration value="testosterone"/>
+            <xs:enumeration value="psa"/>
+            <xs:enumeration value="lithium"/>
+            <xs:enumeration value="amy"/>
+            <!-- Amylase -->
+            <xs:enumeration value="ft4"/>
+            <xs:enumeration value="tsh"/>
+            <xs:enumeration value="lipase"/>
+            <xs:enumeration value="hct"/>
+            <!-- Haematocrit -->
+
+        </xs:restriction>
+    </xs:simpleType>
+
+
+    <xs:simpleType name="prepost">
+        <xs:annotation>
+            <xs:documentation>Pre or Post Dialysis Result</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PRE"/>
+            <xs:enumeration value="POST"/>
+            <xs:enumeration value="UNK"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="programmembershio_code">
+        <xs:annotation>
+            <xs:documentation>Program Memberships. NOTE: For collections that operate under assumed consent (UKRR via s251) Membership signifies a wish not to participate.</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="PV"/>
+            <xs:enumeration value="UKRR"/>
+            <xs:enumeration value="RADAR"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
