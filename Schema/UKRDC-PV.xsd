@@ -193,7 +193,7 @@
                                         <xs:element name="programmembership">
                                             <xs:complexType>
                                                 <xs:sequence>
-                                                    <xs:element name="programmembership_code" maxOccurs="1" minOccurs="1"/>
+                                                    <xs:element name="programmembership_code" maxOccurs="1" minOccurs="1" type="programmembership_code"/>
                                                     <xs:element name="programmembership_status" maxOccurs="1" minOccurs="1" type="xs:boolean"/>
                                                 </xs:sequence>
                                             </xs:complexType>
@@ -619,7 +619,7 @@
         </xs:restriction>
     </xs:simpleType>
 
-    <xs:simpleType name="programmembershio_code">
+    <xs:simpleType name="programmembership_code">
         <xs:annotation>
             <xs:documentation>Program Memberships. NOTE: For collections that operate under assumed consent (UKRR via s251) Membership signifies a wish not to participate.</xs:documentation>
         </xs:annotation>
