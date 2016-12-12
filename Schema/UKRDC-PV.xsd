@@ -598,6 +598,7 @@
             <xs:enumeration value="lithium"/>
             <xs:enumeration value="amy"/>
             <!-- Amylase -->
+            <xs:enumeration value="ft3"/>
             <xs:enumeration value="ft4"/>
             <xs:enumeration value="tsh"/>
             <xs:enumeration value="lipase"/>
