@@ -187,54 +187,29 @@
                 <xs:element maxOccurs="1" minOccurs="1" name="patient">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element maxOccurs="1" minOccurs="0" name="programmemberships">
-                                <xs:complexType>
-                                    <xs:sequence>
-                                        <xs:element name="programmembership">
-                                            <xs:complexType>
-                                                <xs:sequence>
-                                                    <xs:element name="programmembership_code" maxOccurs="1" minOccurs="1" type="programmembership_code"/>
-                                                    <xs:element name="programmembership_status" maxOccurs="1" minOccurs="1" type="xs:boolean"/>
-                                                </xs:sequence>
-                                            </xs:complexType>
-                                        </xs:element>
-                                    </xs:sequence>
-                                </xs:complexType>    
-
-                            </xs:element>
 
                             <xs:element maxOccurs="1" minOccurs="1" name="personaldetails">
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element maxOccurs="1" minOccurs="0" name="surname">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for Anonymous Data</xs:documentation>
-                                            </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="30"/>
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
-                                        <xs:element maxOccurs="1" minOccurs="0" name="forename">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for Anonymous Data</xs:documentation>
-                                            </xs:annotation>                                        
+                                        <xs:element maxOccurs="1" minOccurs="0" name="forename">                                  
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="30"/>
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
-                                        <xs:element maxOccurs="1" minOccurs="1" name="dateofbirth" type="xs:date">
-                                            <xs:annotation>
-                                                <xs:documentation>If sending anonymous data please set to 02/07/YYYY where YYYY is their real year of birth</xs:documentation>
-                                            </xs:annotation>
-                                        </xs:element>                                        
+                                        <xs:element maxOccurs="1" minOccurs="1" name="dateofbirth" type="xs:date"/>                                    
                                         <xs:element maxOccurs="1" minOccurs="0" name="sex" type="sex"/>
                                         <xs:element maxOccurs="1" minOccurs="0" name="nhsno">
                                             <xs:annotation>
-                                                <xs:documentation>NHS/CHI/HandSC Identifier. Do not supply for anonymous patients.</xs:documentation>
+                                                <xs:documentation>NHS/CHI/HandSC Identifier</xs:documentation>
                                             </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
@@ -242,27 +217,13 @@
                                                     <xs:length value="10"/>
                                                 </xs:restriction>
                                             </xs:simpleType>
-                                        </xs:element>
-                                        <xs:element maxOccurs="1" minOccurs="0" name="uid">
-                                            <xs:annotation>
-                                                <xs:documentation>UID - Anonymous Identifier (such as Database ID). Please supply for all patients.</xs:documentation>
-                                            </xs:annotation>
-                                            <xs:simpleType>
-                                                <xs:restriction base="xs:string">
-                                                    <xs:whiteSpace value="collapse"/>
-                                                    <xs:length value="10"/>
-                                                </xs:restriction>
-                                            </xs:simpleType>
-                                        </xs:element>                                        
+                                        </xs:element>                                     
                                         <xs:element maxOccurs="1" minOccurs="0" name="ethnicorigin" type="xs:string">
                                             <xs:annotation>
                                                 <xs:documentation>Ethnic Origin - Coded as per UKRR (v3 or v4 code sets)</xs:documentation>
                                             </xs:annotation>
                                         </xs:element>
-                                        <xs:element maxOccurs="1" minOccurs="0" name="hospitalnumber">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
-                                            </xs:annotation>                                        
+                                        <xs:element maxOccurs="1" minOccurs="0" name="hospitalnumber">                                   
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="30"/>
@@ -270,9 +231,6 @@
                                             </xs:simpleType>
                                         </xs:element>
                                         <xs:element maxOccurs="1" minOccurs="0" name="address1">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
-                                            </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="60"/>
@@ -280,9 +238,6 @@
                                             </xs:simpleType>
                                         </xs:element>
                                         <xs:element maxOccurs="1" minOccurs="0" name="address2">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
-                                            </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="60"/>
@@ -290,9 +245,6 @@
                                             </xs:simpleType>
                                         </xs:element>
                                         <xs:element maxOccurs="1" minOccurs="0" name="address3">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
-                                            </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="60"/>
@@ -300,9 +252,6 @@
                                             </xs:simpleType>
                                         </xs:element>
                                         <xs:element maxOccurs="1" minOccurs="0" name="address4">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
-                                            </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="60"/>
@@ -310,9 +259,6 @@
                                             </xs:simpleType>
                                         </xs:element>
                                         <xs:element maxOccurs="1" minOccurs="0" name="postcode">
-                                            <xs:annotation>
-                                                <xs:documentation>For anonymous patients please only supply the first part of the post code</xs:documentation>
-                                            </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="10"/>
@@ -320,9 +266,6 @@
                                             </xs:simpleType>
                                         </xs:element>
                                         <xs:element maxOccurs="1" minOccurs="0" name="telephone1">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
-                                            </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="100"/>
@@ -330,9 +273,6 @@
                                             </xs:simpleType>
                                         </xs:element>
                                         <xs:element maxOccurs="1" minOccurs="0" name="telephone2">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
-                                            </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="100"/>
@@ -340,9 +280,6 @@
                                             </xs:simpleType>
                                         </xs:element>
                                         <xs:element maxOccurs="1" minOccurs="0" name="mobile">
-                                            <xs:annotation>
-                                                <xs:documentation>Do not supply for anonymous patients</xs:documentation>
-                                            </xs:annotation>
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="100"/>
@@ -480,9 +417,6 @@
                                 </xs:complexType>
                             </xs:element>
                             <xs:element maxOccurs="1" minOccurs="0" name="letterdetails">
-                                <xs:annotation>
-                                    <xs:documentation>Do not supply for anonymous patients</xs:documentation>
-                                </xs:annotation>
                                 <xs:complexType>
                                     <xs:sequence>
                                         <xs:element maxOccurs="unbounded" minOccurs="1" name="letter">
@@ -589,6 +523,8 @@
             <xs:enumeration value="ironsat"/>
             <xs:enumeration value="urate"/>
 
+            <!-- Codes below here have been added since RPV 4.6 -->
+            
             <xs:enumeration value="ldl"/>
             <xs:enumeration value="hdl"/>
             <xs:enumeration value="magnesium"/>
@@ -596,14 +532,25 @@
             <xs:enumeration value="testosterone"/>
             <xs:enumeration value="psa"/>
             <xs:enumeration value="lithium"/>
-            <xs:enumeration value="amy"/>
-            <!-- Amylase -->
+            <xs:enumeration value="amy"/><!-- Amylase -->
             <xs:enumeration value="ft3"/>
             <xs:enumeration value="ft4"/>
             <xs:enumeration value="tsh"/>
             <xs:enumeration value="lipase"/>
-            <xs:enumeration value="hct"/>
-            <!-- Haematocrit -->
+            <xs:enumeration value="hct"/><!-- Haematocrit -->
+            <!-- UKRDC-277 -->
+            <xs:enumeration value="bmi"/>
+            <xs:enumeration value="folate"/>
+            <xs:enumeration value="FaecalCalprotectin"/>
+            <xs:enumeration value="lhratio"/>
+            <xs:enumeration value="mmp"/>
+            <xs:enumeration value="pulse"/>
+            <xs:enumeration value="t4"/>
+            <xs:enumeration value="tgn"/>
+            <xs:enumeration value="tpmt"/>
+            <xs:enumeration value="vitb12"/>         
+             <!-- UKRDC-314 -->
+            <xs:enumeration value="ldh"/> <!-- Lactate Dehydrogenase -->     
 
         </xs:restriction>
     </xs:simpleType>
@@ -617,17 +564,6 @@
             <xs:enumeration value="PRE"/>
             <xs:enumeration value="POST"/>
             <xs:enumeration value="UNK"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="programmembership_code">
-        <xs:annotation>
-            <xs:documentation>Program Memberships. NOTE: For collections that operate under assumed consent (UKRR via s251) Membership signifies a wish not to participate.</xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="PV"/>
-            <xs:enumeration value="UKRR"/>
-            <xs:enumeration value="RADAR"/>
         </xs:restriction>
     </xs:simpleType>
 
