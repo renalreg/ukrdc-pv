@@ -198,14 +198,14 @@
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
-                                        <xs:element maxOccurs="1" minOccurs="0" name="forename">                                  
+                                        <xs:element maxOccurs="1" minOccurs="0" name="forename">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="30"/>
                                                 </xs:restriction>
                                             </xs:simpleType>
                                         </xs:element>
-                                        <xs:element maxOccurs="1" minOccurs="1" name="dateofbirth" type="xs:date"/>                                    
+                                        <xs:element maxOccurs="1" minOccurs="1" name="dateofbirth" type="xs:date"/>
                                         <xs:element maxOccurs="1" minOccurs="0" name="sex" type="sex"/>
                                         <xs:element maxOccurs="1" minOccurs="0" name="nhsno">
                                             <xs:annotation>
@@ -217,13 +217,13 @@
                                                     <xs:length value="10"/>
                                                 </xs:restriction>
                                             </xs:simpleType>
-                                        </xs:element>                                     
+                                        </xs:element>
                                         <xs:element maxOccurs="1" minOccurs="0" name="ethnicorigin" type="xs:string">
                                             <xs:annotation>
                                                 <xs:documentation>Ethnic Origin - Coded as per UKRR (v3 or v4 code sets)</xs:documentation>
                                             </xs:annotation>
                                         </xs:element>
-                                        <xs:element maxOccurs="1" minOccurs="0" name="hospitalnumber">                                   
+                                        <xs:element maxOccurs="1" minOccurs="0" name="hospitalnumber">
                                             <xs:simpleType>
                                                 <xs:restriction base="xs:string">
                                                     <xs:maxLength value="30"/>
@@ -524,7 +524,7 @@
             <xs:enumeration value="urate"/>
 
             <!-- Codes below here have been added since RPV 4.6 -->
-            
+
             <xs:enumeration value="ldl"/>
             <xs:enumeration value="hdl"/>
             <xs:enumeration value="magnesium"/>
@@ -548,10 +548,31 @@
             <xs:enumeration value="t4"/>
             <xs:enumeration value="tgn"/>
             <xs:enumeration value="tpmt"/>
-            <xs:enumeration value="vitb12"/>         
+            <xs:enumeration value="vitb12"/>
              <!-- UKRDC-314 -->
-            <xs:enumeration value="ldh"/> <!-- Lactate Dehydrogenase -->     
-
+            <xs:enumeration value="ldh"/> <!-- Lactate Dehydrogenase -->
+            <!-- PV Self-Entered Home HD Codes -->
+            <xs:enumeration value="BodyTemperature"/>
+            <xs:enumeration value="bps"/>
+            <xs:enumeration value="DialFlow"/>
+            <xs:enumeration value="eprex"/>
+            <xs:enumeration value="HdHours"/>
+            <xs:enumeration value="HdLocation"/>
+            <xs:enumeration value="hypotension"/>
+            <xs:enumeration value="LitresProcessed"/>
+            <xs:enumeration value="TargetWeight"/>
+            <xs:enumeration value="UfVolume"/>
+            <!-- PV Self-Entered Result Codes -->
+            <xs:enumeration value="resultcomment"/>
+            <!-- New Codes (27/02/2018) -->
+            <xs:enumeration value="neutrophils"/>
+            <xs:enumeration value="hbv"/>
+            <xs:enumeration value="hcv"/>
+            <xs:enumeration value="phepku"/>
+            <xs:enumeration value="ret-he"/>
+            <xs:enumeration value="ualbumin"/>
+            <xs:enumeration value="ucreatinine"/>
+            <xs:enumeration value="uproteint"/>
         </xs:restriction>
     </xs:simpleType>
 
