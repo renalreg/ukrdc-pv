@@ -551,19 +551,6 @@
             <xs:enumeration value="vitb12"/>
              <!-- UKRDC-314 -->
             <xs:enumeration value="ldh"/> <!-- Lactate Dehydrogenase -->
-            <!-- PV Self-Entered Home HD Codes -->
-            <xs:enumeration value="BodyTemperature"/>
-            <xs:enumeration value="bps"/>
-            <xs:enumeration value="DialFlow"/>
-            <xs:enumeration value="eprex"/>
-            <xs:enumeration value="HdHours"/>
-            <xs:enumeration value="HdLocation"/>
-            <xs:enumeration value="hypotension"/>
-            <xs:enumeration value="LitresProcessed"/>
-            <xs:enumeration value="TargetWeight"/>
-            <xs:enumeration value="UfVolume"/>
-            <!-- PV Self-Entered Result Codes -->
-            <xs:enumeration value="resultcomment"/>
             <!-- New Codes (27/02/2018) -->
             <xs:enumeration value="neutrophils"/>
             <xs:enumeration value="hbv"/>
