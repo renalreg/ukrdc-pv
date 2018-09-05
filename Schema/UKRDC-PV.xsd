@@ -423,6 +423,9 @@
                                             <xs:complexType>
                                                 <xs:sequence>
                                                     <xs:element maxOccurs="1" minOccurs="1" name="letterdate" type="xs:dateTime"/>
+                                                    <xs:element maxOccurs="1" minOccurs="0" name="lettertitle" type="xs:string"/>
+                                                    <xs:element maxOccurs="1" minOccurs="0" name="letterfilename" type="xs:string"/>
+                                                    <xs:element maxOccurs="1" minOccurs="0" name="letterfiletype" type="xs:string"/>
                                                     <xs:element maxOccurs="1" minOccurs="1" name="lettertype">
                                                         <xs:simpleType>
                                                             <xs:restriction base="xs:string">
@@ -435,6 +438,13 @@
                                                             <xs:documentation>
                                                             Letter content should be sent as a CDATA section to avoid parsing errors. E.g.<![CDATA[ and end with the string ]]>
                                                             Please make sure that the encoding of the Letter section matches the header of the XML file.
+                                                            </xs:documentation>
+                                                        </xs:annotation>
+                                                    </xs:element>
+                                                    <xs:element name="letterfilebody" maxOccurs="1" minOccurs="0" type="xs:string">
+                                                        <xs:annotation>
+                                                            <xs:documentation>
+                                                            This property is used when the Note is binary data, e.g DOC, PDF, JPG
                                                             </xs:documentation>
                                                         </xs:annotation>
                                                     </xs:element>
@@ -532,12 +542,12 @@
             <xs:enumeration value="testosterone"/>
             <xs:enumeration value="psa"/>
             <xs:enumeration value="lithium"/>
-            <xs:enumeration value="amy"/><!-- Amylase -->
+            <xs:enumeration value="amy"/> <!-- Amylase -->
             <xs:enumeration value="ft3"/>
             <xs:enumeration value="ft4"/>
             <xs:enumeration value="tsh"/>
             <xs:enumeration value="lipase"/>
-            <xs:enumeration value="hct"/><!-- Haematocrit -->
+            <xs:enumeration value="hct"/> <!-- Haematocrit -->
             <!-- UKRDC-277 -->
             <xs:enumeration value="bmi"/>
             <xs:enumeration value="folate"/>
@@ -549,7 +559,7 @@
             <xs:enumeration value="tgn"/>
             <xs:enumeration value="tpmt"/>
             <xs:enumeration value="vitb12"/>
-             <!-- UKRDC-314 -->
+            <!-- UKRDC-314 -->
             <xs:enumeration value="ldh"/> <!-- Lactate Dehydrogenase -->
             <!-- New Codes (27/02/2018) -->
             <xs:enumeration value="neutrophils"/>
