@@ -569,7 +569,10 @@
             <xs:enumeration value="ret-he"/>
             <xs:enumeration value="ualbumin"/>
             <xs:enumeration value="ucreatinine"/>
-            <xs:enumeration value="uproteint"/>
+            <xs:enumeration value="uprotein"/>
+            <!-- Covid-19 -->
+            <xs:enumeration value="covid19pcr"/>
+            <xs:enumeration value="covid19antibody"/>
         </xs:restriction>
     </xs:simpleType>
 
